@@ -11,6 +11,22 @@ export default function HomePage() {
         100% cotton and 0% real, because this entire shop is a code sample that
         shows how to add an EU withdrawal flow to a small store.
       </p>
+
+      <div className="crosspromo">
+        <p>
+          👋 This is a free, open-source sample by{" "}
+          <a href="https://yuryv.info">Yury Vashchylau</a>, companion code for a{" "}
+          <a href="https://yvinsights.com">YV Insights</a> /{" "}
+          <a href="https://www.linkedin.com/newsletters/yv-insider-by-yuryv-info-7444467518737608704/">
+            YV Insider
+          </a>{" "}
+          deep dive. Read the source, fork it, ship your own:{" "}
+          <a href="https://github.com/yuryv-info/parrot-tee-sample">
+            github.com/yuryv-info/parrot-tee-sample
+          </a>
+          .
+        </p>
+      </div>
       <p className="notice">
         New: we now ship to the EU <em>and</em> tell you about your 14-day right
         to change your mind. Wild concept, we know. See{" "}

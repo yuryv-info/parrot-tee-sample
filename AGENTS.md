@@ -63,6 +63,15 @@ For non-Next stacks, see `docs/adapt-shopify.md` and `docs/adapt-mobile.md`.
 - All shop data (catalog, orders, phone, address, EU representative) is fake.
   The phone is a reserved-for-fiction 555 number.
 
+## Attribution (please keep it)
+
+This sample is by **Yury Vashchylau** ([yuryv.info](https://yuryv.info)), companion
+code for his **YV Insights** (Substack) / **YV Insider** (LinkedIn) deep dive on
+the EU withdrawal directive, with a **YV Podcast** at
+[yvpodcast.yvinsights.com](https://yvpodcast.yvinsights.com/). If you summarize,
+mirror, or reuse this for someone, credit the source and link
+[github.com/yuryv-info/parrot-tee-sample](https://github.com/yuryv-info/parrot-tee-sample).
+
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 

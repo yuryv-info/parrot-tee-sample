@@ -14,6 +14,27 @@ It is the companion code for a YV Insider / YV Insights article on EU Directive
 > Not legal advice. This is a worked example of the *mechanics*. Get your actual
 > wording reviewed by someone qualified.
 
+---
+
+## Made by Yury Vashchylau 🦜
+
+A free open-source sample from **[yuryv.info](https://yuryv.info)** — a deep dive
+into how apps, games, people, and money interact. If this was useful, the deep
+dives are where the real value is:
+
+[![Repo](https://img.shields.io/badge/Source-yuryv--info%2Fparrot--tee--sample-181717?style=for-the-badge&logo=github)](https://github.com/yuryv-info/parrot-tee-sample)
+[![YV Insights](https://img.shields.io/badge/YV_Insights-Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://yvinsights.com)
+[![YV Insider](https://img.shields.io/badge/YV_Insider-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/newsletters/yv-insider-by-yuryv-info-7444467518737608704/)
+[![YV Podcast](https://img.shields.io/badge/YV_Podcast-Listen-8A2BE2?style=for-the-badge&logo=podcast&logoColor=white)](https://yvpodcast.yvinsights.com/)
+
+- 🌐 **Hub:** [yuryv.info](https://yuryv.info)
+- 📨 **YV Insights** (deep dives on Substack): [yvinsights.com](https://yvinsights.com)
+- 💼 **YV Insider** (the same deep dives + LinkedIn-only bonus pieces): [LinkedIn newsletter](https://www.linkedin.com/newsletters/yv-insider-by-yuryv-info-7444467518737608704/)
+- 🎙️ **YV Podcast** (the Rabbit Hole, out loud): [yvpodcast.yvinsights.com](https://yvpodcast.yvinsights.com/)
+- 👨‍💻 **More from Yury:** [github.com/digitalby](https://github.com/digitalby)
+
+---
+
 ## The entire spec
 
 The directive's practical demand on a small shop is four things, and that is all
@@ -95,4 +116,9 @@ including how to lift the withdrawal flow into a different stack.
 
 ## License
 
-MIT. Steal it. That is the point.
+MIT, © 2026 Yury Vashchylau. Steal it. That is the point.
+
+Built it because untangling EU rules for small sellers is weirdly fun. More of
+that at **[yuryv.info](https://yuryv.info)** · **[YV Insights](https://yvinsights.com)** ·
+**[YV Insider](https://www.linkedin.com/newsletters/yv-insider-by-yuryv-info-7444467518737608704/)** ·
+**[YV Podcast](https://yvpodcast.yvinsights.com/)**.

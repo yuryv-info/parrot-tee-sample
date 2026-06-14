@@ -87,3 +87,21 @@ pre.email {
   border-left: 3px solid #1a3fb0;
   padding-left: 0.75rem;
 }
+
+/* Cross-promo block. Loud on purpose: this sample is marketing for the
+   newsletter, so the credit is unmissable, not a buried colophon. */
+.crosspromo {
+  border: 2px solid #1a3fb0;
+  background: #eef2ff;
+  color: #111;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+}
+
+.crosspromo a {
+  font-weight: bold;
+}
+
+.crosspromo p {
+  margin: 0.35rem 0;
+}

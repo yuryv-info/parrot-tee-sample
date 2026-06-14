@@ -48,6 +48,32 @@ export default function RootLayout({
             Polly&apos;s Parrot Tees is a fictional shop in an open-source code sample.
             No real parrots, prices, or payments. Not legal advice.
           </p>
+
+          {/* Cross-promo: this sample is companion code for a newsletter, so the
+              credit and brand links ride on every page, unmissably. */}
+          <div className="crosspromo">
+            <p>
+              🦜 Built by <strong>Yury Vashchylau</strong> as the companion code for a{" "}
+              <a href="https://yvinsights.com">YV Insights</a> deep dive on the EU
+              withdrawal directive.
+            </p>
+            <p>
+              <a href="https://yuryv.info">yuryv.info</a> &middot;{" "}
+              <a href="https://yvinsights.com">YV Insights (Substack)</a> &middot;{" "}
+              <a href="https://www.linkedin.com/newsletters/yv-insider-by-yuryv-info-7444467518737608704/">
+                YV Insider (LinkedIn)
+              </a>{" "}
+              &middot; <a href="https://yvpodcast.yvinsights.com/">YV Podcast</a>
+            </p>
+            <p>
+              <em>A deep dive into how apps, games, people, and money interact.</em>
+            </p>
+            <p>
+              <a href="https://github.com/yuryv-info/parrot-tee-sample">
+                ★ Star / fork the source on GitHub
+              </a>
+            </p>
+          </div>
         </footer>
       </body>
     </html>
