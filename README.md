@@ -58,6 +58,8 @@ service" rent.
 | 4. Durable-medium email | [`lib/withdrawal.ts`](lib/withdrawal.ts) (`renderConfirmationEmail`) |
 | The server handler | [`app/api/withdraw/route.ts`](app/api/withdraw/route.ts) |
 | Plain-language rights copy | [`app/legal/right-of-withdrawal/page.tsx`](app/legal/right-of-withdrawal/page.tsx) |
+| Healthcheck | [`app/api/health/route.ts`](app/api/health/route.ts) |
+| Tests | [`test/`](test/) (run `npm test`) |
 
 The two files you actually copy into your own backend are **`lib/withdrawal.ts`**
 (pure, no dependencies) and **`lib/store.ts`** (the one bit you replace with a
@@ -74,11 +76,15 @@ Open <http://localhost:3000>, then walk: a product → checkout → **My orders*
 **Withdraw from this contract** → confirm → success. The success page shows the
 stored record (with timestamp) and the exact confirmation email.
 
-Build check:
+Build check and tests:
 
 ```
 npm run build
+npm test
 ```
+
+`npm test` runs the Node built-in test runner (no extra dependencies) over the
+withdrawal core, the end-to-end flow, and the `/api/health` healthcheck.
 
 ## Deploy your own copy
 

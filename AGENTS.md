@@ -36,6 +36,8 @@ app/withdraw/confirm/page.tsx    <- step 2: the deliberate confirm, then POST.
 app/withdraw/success/page.tsx    <- steps 3+4: shows the stored record + the email.
 app/legal/right-of-withdrawal/page.tsx <- the plain-language rights copy + EU model form.
 lib/products.ts, lib/orders.ts   <- mock shop data, not part of the lesson.
+app/api/health/route.ts          <- GET /api/health liveness check (plain Response).
+test/                            <- node:test suite (npm test): withdrawal, flow, health.
 ```
 
 ## To implement this in someone's own store
