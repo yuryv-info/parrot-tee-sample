@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Polly's Parrot Tees 🦜
 
-## Getting Started
+A tiny, fictional merch shop whose only real job is to show how a small seller
+adds the **EU 14-day right-of-withdrawal flow** ("the withdrawal button") to
+their own store. Fork it, read it, copy the four files that matter, ship a real
+version in an afternoon.
 
-First, run the development server:
+It is the companion code for a YV Insider / YV Insights article on EU Directive
+2023/2673.
 
-```bash
+- Substack: <!--SUBSTACK_URL-->_(link added once published)_<!--/SUBSTACK_URL-->
+- LinkedIn: <!--LINKEDIN_URL-->_(link added once published)_<!--/LINKEDIN_URL-->
+
+> Not legal advice. This is a worked example of the *mechanics*. Get your actual
+> wording reviewed by someone qualified.
+
+## The entire spec
+
+The directive's practical demand on a small shop is four things, and that is all
+this repo implements:
+
+1. A visible **"Withdraw from contract"** link on every page.
+2. A **confirm step** so nobody cancels by accident.
+3. A **stored record** with a timestamp.
+4. A **confirmation email** as the "durable medium" (a copy the customer keeps).
+
+That's it. No six-figure compliance platform, no "withdrawal button as a
+service" rent.
+
+## Where each piece lives
+
+| Requirement | File |
+|---|---|
+| 1. Link on every page | [`app/layout.tsx`](app/layout.tsx) (footer) |
+| 2. Confirm step | [`app/withdraw/confirm/page.tsx`](app/withdraw/confirm/page.tsx) |
+| 3. Stored, timestamped record | [`lib/withdrawal.ts`](lib/withdrawal.ts) + [`lib/store.ts`](lib/store.ts) |
+| 4. Durable-medium email | [`lib/withdrawal.ts`](lib/withdrawal.ts) (`renderConfirmationEmail`) |
+| The server handler | [`app/api/withdraw/route.ts`](app/api/withdraw/route.ts) |
+| Plain-language rights copy | [`app/legal/right-of-withdrawal/page.tsx`](app/legal/right-of-withdrawal/page.tsx) |
+
+The two files you actually copy into your own backend are **`lib/withdrawal.ts`**
+(pure, no dependencies) and **`lib/store.ts`** (the one bit you replace with a
+real datastore). Everything else is just a believable shop wrapped around them.
+
+## Run it locally
+
+```
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>, then walk: a product → checkout → **My orders** →
+**Withdraw from this contract** → confirm → success. The success page shows the
+stored record (with timestamp) and the exact confirmation email.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build check:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+npm run build
+```
 
-## Learn More
+## Deploy your own copy
 
-To learn more about Next.js, take a look at the following resources:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yuryv-info/parrot-tee-sample)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No environment variables, no secrets, no database needed to boot. (The mock
+store is in-memory; see "Make it real" below before you take orders.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Make it real
 
-## Deploy on Vercel
+This is a demo, so a few things are intentionally faked. Each has a comment in
+the code at the swap-in point:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Storage** (`lib/store.ts`): swap the in-memory `Map` for Vercel KV, Postgres,
+  or your existing orders DB. On serverless, memory does not persist, so this
+  swap is mandatory before production.
+- **Email** (`app/api/withdraw/route.ts`): actually send `renderConfirmationEmail`
+  via Resend / Postmark / SES instead of returning it to the browser.
+- **Catalog, orders, contact details**: replace the mock data in `lib/` and the
+  fake 555 number / address / EU representative on the Contact page with yours.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adapting it to a shop you didn't build
+
+You don't need Next.js. The flow is portable.
+
+- **Shopify / themed store** → [`docs/adapt-shopify.md`](docs/adapt-shopify.md)
+- **Mobile app settings screen** → [`docs/adapt-mobile.md`](docs/adapt-mobile.md)
+- **The flow, step by step** → [`docs/withdrawal-flow.md`](docs/withdrawal-flow.md)
+- **What the law actually asks for** → [`docs/the-spec.md`](docs/the-spec.md)
+
+## For AI agents
+
+A reader pointed you here? See [`AGENTS.md`](AGENTS.md) for a map written for you,
+including how to lift the withdrawal flow into a different stack.
+
+## License
+
+MIT. Steal it. That is the point.

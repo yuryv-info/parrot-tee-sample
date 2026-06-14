@@ -1,49 +1,89 @@
+/* Deliberately barebones. Web 1.0 energy: one column, system fonts, real
+   links that look like links. Easy to read, easy for an agent to parse, and
+   nothing here is load-bearing. Delete it all and the shop still works. */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: #1a3fb0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+header nav a {
+  margin-right: 0.75rem;
+}
+
+header,
+footer {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  border-bottom: none;
+  border-top: 1px solid #ccc;
+  padding-top: 0.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.withdraw-link {
+  font-weight: bold;
+}
+
+ul.catalog {
+  list-style: none;
+  padding: 0;
+}
+
+ul.catalog li {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.4rem;
+  font: inherit;
+}
+
+button {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+pre.email {
+  border: 1px solid #999;
+  background: #f6f6f6;
+  color: #111;
+  padding: 1rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.notice {
+  border-left: 3px solid #1a3fb0;
+  padding-left: 0.75rem;
 }
